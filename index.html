@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Worker Demo</title>
+</head>
+<style>
+    .x {
+        position: absolute;
+        transform: rotate(45deg);
+        top: 60px;
+        left: 20px;
+    }
+
+    .x .horizontal {
+        width: 45px;
+        height: 5px;
+        position: absolute;
+        left: -20px;
+        background: red;
+    }
+
+    .x .vertical {
+        height: 45px;
+        width: 5px;
+        background: red;
+        position: absolute;
+        left: 0px;
+        top: -20px;
+    }
+</style>
+<body>
+<div class="x">
+    <div class="horizontal"></div>
+    <div class="vertical"></div>
+</div>
+<script src="scripts/main.js"></script>
+</body>
+</html>
