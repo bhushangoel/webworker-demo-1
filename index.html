@@ -3,37 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Web Worker Demo</title>
+    <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<style>
-    .x {
-        position: absolute;
-        transform: rotate(45deg);
-        top: 60px;
-        left: 20px;
-    }
-
-    .x .horizontal {
-        width: 45px;
-        height: 5px;
-        position: absolute;
-        left: -20px;
-        background: red;
-    }
-
-    .x .vertical {
-        height: 45px;
-        width: 5px;
-        background: red;
-        position: absolute;
-        left: 0px;
-        top: -20px;
-    }
-</style>
 <body>
-<div class="x">
-    <div class="horizontal"></div>
-    <div class="vertical"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <p>This is an example showing performance differences between <strong>Blocking Code</strong>, <strong>Async Programming
+                and Web Workers.</strong></p>
+            <p><i>Problem Statement : Calculate average of sum of 10000 numbers.</i></p>
+        </div>
+    </div>
+    <hr>
+    <h3>Blocking Code</h3>
+    <p>(Using for loop to calculate)</p>
+    <div class="row">
+        <div class="col-3">
+            <button class="btn-primary" onclick="averageBlock(10000)">Calculate average</button>
+            <button class="btn-info" onclick="helloBlock()">Say Hello</button>
+        </div>
+        <div class="col-3">
+            Time Taken : <span id="timeBlock"></span>
+        </div>
+    </div>
+    <hr>
+    <h3>Async (timeout)</h3>
+    <p>(Using recursion and setTimeout)</p>
+    <div class="row">
+        <div class="col-3">
+            <button class="btn-primary" onclick="averageAsync(10000)">Calculate average</button>
+            <button class="btn-info" onclick="helloAsync()">Say Hello</button>
+        </div>
+        <div class="col-3">
+            Time Taken : <span id="timeAsync"></span>
+        </div>
+    </div>
+    <hr>
+    <h3>With Web Worker</h3>
+    <p>(for loop logic moved to web worker)</p>
+    <div class="row">
+        <div class="col-3">
+            <button class="btn-primary" onclick="average(10000)">Calculate average</button>
+            <button class="btn-info" onclick="hello()">Say Hello</button>
+        </div>
+        <div class="col-3">
+            Time Taken : <span id="time"></span>
+        </div>
+    </div>
 </div>
+
 <script src="scripts/main.js"></script>
+<script src="scripts/sync.js"></script>
+<script src="scripts/async-timeout.js"></script>
 </body>
 </html>

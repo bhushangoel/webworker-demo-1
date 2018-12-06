@@ -1,14 +1,19 @@
-let counter = 0;
-function pause(ms) {
-    let time = new Date();
-    counter += 1;
-    while ((new Date()) - time <= ms) {
-        // waiting ...
+onmessage = (e) => {
+    DedicatedWorkerGlobalScope
+    let numbers = e.data;
+    let startTime = new Date().getTime();
+    let len = numbers,
+        sum = 0,
+        i;
+
+    if (len === 0) {
+        return 0;
     }
 
-    postMessage(counter);
-}
+    for (i = 0; i < len; i++) {
+        sum += i;
+    }
 
-onmessage = (e) => {
-    pause(100);
+    let endTime = new Date().getTime();
+    postMessage({average: sum / len, time: ((endTime - startTime) / 1000)})
 };
