@@ -9,17 +9,24 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <p>This is an example showing performance differences between <strong>Blocking Code</strong>, <strong>Async Programming
+            <p>This is an example showing performance differences between <strong>Blocking Code</strong>, <strong>Async
+                Programming
                 and Web Workers.</strong></p>
-            <p><i>Problem Statement : Calculate average of sum of 10000 numbers.</i></p>
+            <p><i>Problem Statement : Calculate average of sum of given count of numbers.</i></p>
         </div>
     </div>
     <hr>
-    <h3>Blocking Code</h3>
-    <p>(Using for loop to calculate)</p>
+
+    <div class="row">
+        <h3>Blocking Code</h3>
+        <p>(Using for loop to calculate)</p>
+        <div class="col-6">
+            <input type="text" maxlength="9" id="valueBlock" placeholder="Enter a number"/>
+        </div>
+    </div>
     <div class="row">
         <div class="col-3">
-            <button class="btn-primary" onclick="averageBlock(10000)">Calculate average</button>
+            <button class="btn-primary" onclick="averageBlock()">Calculate average</button>
             <button class="btn-info" onclick="helloBlock()">Say Hello</button>
         </div>
         <div class="col-3">
@@ -27,9 +34,10 @@
         </div>
     </div>
     <hr>
-    <h3>Async (timeout)</h3>
-    <p>(Using recursion and setTimeout)</p>
+
     <div class="row">
+        <h3>Async (timeout)</h3>
+        <p>(Using recursion and setTimeout)</p>
         <div class="col-3">
             <button class="btn-primary" onclick="averageAsync(10000)">Calculate average</button>
             <button class="btn-info" onclick="helloAsync()">Say Hello</button>
@@ -39,9 +47,10 @@
         </div>
     </div>
     <hr>
-    <h3>With Web Worker</h3>
-    <p>(for loop logic moved to web worker)</p>
+
     <div class="row">
+        <h3>With Web Worker</h3>
+        <p>(for loop logic moved to web worker)</p>
         <div class="col-3">
             <button class="btn-primary" onclick="average(10000)">Calculate average</button>
             <button class="btn-info" onclick="hello()">Say Hello</button>
