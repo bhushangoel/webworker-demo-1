@@ -1,6 +1,21 @@
 (() => {
+
     document.getElementById('valueBlock').value = 10000;
+    showProgressBlock = () => {
+        document.getElementById('timeAsync').innerHTML = '';
+        document.getElementById('avgAsync').innerHTML = '';
+        let progress = document.getElementById('myprogressBlock');
+        progress.style.display = 'block';
+    }
+
+    hideProgressBlock = () => {
+        let progress = document.getElementById('myprogressBlock');
+        progress.style.display = 'none';
+    }
+
+    hideProgressBlock();
     averageBlock = () => {
+        showProgressBlock();
         try {
             var numbers = document.getElementById('valueBlock').value;
         }
@@ -17,17 +32,12 @@
         }
 
         for (i = 0; i < len; i++) {
-            console.log('i :: ', i)
             sum += i;
         }
 
         let endTime = new Date().getTime();
         document.getElementById('timeBlock').innerHTML = `${(endTime - startTime) / 1000} seconds`;
-        alert('Average - ', sum / len);
-    };
-
-    helloBlock = () => {
-        alert("Hello World !!");
+        document.getElementById('avgBlock').innerHTML = `${sum / len}`;
+        hideProgressBlock();
     }
 })();
-
