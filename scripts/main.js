@@ -1,5 +1,5 @@
 (() => {
-    document.getElementById('value').value = 10000;
+    document.getElementById('value').value = 1000000;
 
     showProgress = () => {
         document.getElementById('time').innerHTML = '';

@@ -1,6 +1,6 @@
 (() => {
 
-    document.getElementById('valueAsync').value = 10000;
+    document.getElementById('valueAsync').value = 1000;
     showProgressAsync = () => {
         document.getElementById('timeAsync').innerHTML = '';
         document.getElementById('avgAsync').innerHTML = '';
