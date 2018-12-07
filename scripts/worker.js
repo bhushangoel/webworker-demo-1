@@ -1,5 +1,4 @@
 onmessage = (e) => {
-    DedicatedWorkerGlobalScope
     let numbers = e.data;
     let startTime = new Date().getTime();
     let len = numbers,
